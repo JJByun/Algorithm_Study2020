@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta charset="utf-8">
+<title>코딩테스트 연습 - 프린터 | 프로그래머스</title>
+<link rel="shortcut icon" type="image/x-icon" href="https://programmers.co.kr/assets/icons/favicon-40b78633b6556a68c3da8e2125c31512fbd01d09906ab76c8a8ff289e494cadb.png">
+<link rel="apple-touch-icon" type="image/png" href="https://programmers.co.kr/assets/icons/apple-icon-6eafc2c4c58a21aef692d6e44ce99d41f999c71789f277317532d0a9c6db8976.png">
+<meta name="keywords" content="코딩 교육, 코딩, 프로그래밍, 실습, 생활코딩, 알고리즘, java">
+<meta property="fb:app_id" content="339079816467879">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="프로그래머스">
+<meta name="twitter:description" property="og:description" itemprop="description" content="코드 중심의 개발자 채용. 스택 기반의 포지션 매칭. 프로그래머스의 개발자 맞춤형 프로필을 등록하고, 나와 기술 궁합이 잘 맞는 기업들을 매칭 받으세요.">
+<meta name="twitter:image" property="og:image" itemprop="image primaryImageOfPage" content="https://programmers.co.kr/assets/img-meta-programmers-e00862a7c9acd8ef5164f8c85b3ab0127d083ab59b3a98d7219690bd3570bf35.png">
+<meta name="twitter:url" property="og:url" content="https://programmers.co.kr/learn/courses/30/lessons/42587">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="프로그래머스">
+<meta name="twitter:card" content="summary">
+<meta name="image_url" content="https://image.freepik.com/free-vector/landing-page-template-for-a-website_23-2147782747.jpg">
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="sDrbqbjscKX72O1rJnuEpHGkoiohgf/OATL5wL4cY3Xe/5w+kXsXLpIIF4mDNqO0UPptnBuDdccZu20uH+wQKg==" />
+<meta name="action-cable-url" content="wss://programmers.co.kr:8080/cable" />
+
+<link rel="stylesheet" media="all" href="/assets/application-54b9a85caef62bdccddfdb4ef1fe5494d69532bde169ec4cd0ecf3510c85b900.css" />
+
+
+  <!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+  w[l] = w[l] || [];
+  w[l].push({
+    'gtm.start':
+      new Date().getTime(), event: 'gtm.js'
+  });
+  var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+  j.async = true;
+  j.src =
+    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+  f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-NT8HLJD');</script>
+<!-- End Google Tag Manager -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-3622640291758278",
+        enable_page_level_ads: true
+    });
+</script>
+
+
+</head>
+<body class="learn-lessons learn-lessons-show"
+      data-ns="Learn"
+      data-controller="lessons"
+      data-action="show"
+      data-defaultLocale="ko"
+      data-locale="ko">
+
+
+
+  <div class="navbar navbar-dark navbar-expand-lg navbar-application navbar-breadcrumb">
+  <a class="navbar-brand" href="/">
+    <img alt="logo" width="24" src="/assets/bi-symbol-light-49a242793b7a8b540cfc3489b918e3bb2a6724f1641572c14c575265d7aeea38.png" />
+</a>  <ol class="breadcrumb"><li><a href="https://programmers.co.kr/learn/challenges">코딩테스트 연습</a></li><li><a href="/learn/challenges?selected_part_id=12081">스택/큐</a></li><li class="active">프린터</li></ol>
+
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item"><a onclick="Learn.lessons.challengeable.startTour(true)" class="nav-link" id="help" href="#">도움말</a></li>
+        <li class="nav-item"><a class="nav-link" data-remote="true" href="/compile_options">컴파일 옵션</a></li>
+      </ul>
+    </div>
+</div>
+
+
+
+<div class="main theme-dark">
+  
+  <div class="lesson-content"
+       data-course-slug="알고리즘-연습"
+       data-course-id="30"
+       data-lesson-id="42587"
+       data-lesson-type="Challenge"
+       data-next-lesson-id="">
+
+    
+<ul class="challenge-nav nav nav-tabs nav-tabs-dark task-tab" id="tab" role="tablist">
+  <li class="nav-item algorithm-nav-link algorithm-title">
+    프린터
+  </li>
+
+  
+<li class="challenge-settings nav-item">
+  <div class="btn-group-theme btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-md btn-outline-dark active">
+        <input type="radio" name="themes" autocomplete="off" checked data-toggle="button" data-theme="dark">dark
+      </label>
+      <label class="btn btn-md btn-outline-dark ">
+        <input type="radio" name="themes" autocomplete="off"  data-toggle="button" data-theme="light">light
+      </label>
+  </div>
+
+    <div data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="코드 에디터의 단축키를 설정하는 옵션입니다. 선호하는 에디터 옵션이 없다면 sublime을 선택해 주세요.">
+      <div class="btn-group-keymap btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-md btn-outline-dark active">
+            <input type="radio" name="keymaps" autocomplete="off" checked data-keymap="sublime">sublime
+          </label>
+          <label class="btn btn-md btn-outline-dark ">
+            <input type="radio" name="keymaps" autocomplete="off"  data-keymap="vim">vim
+          </label>
+          <label class="btn btn-md btn-outline-dark ">
+            <input type="radio" name="keymaps" autocomplete="off"  data-keymap="emacs">emacs
+          </label>
+      </div>
+    </div>
+
+    <div class="dropdown-language" id="tour7">
+      <button class="btn btn-md btn-dark dropdown-toggle" type="button" data-toggle="dropdown">
+        Java
+      </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42587?language=cpp">C++</a>
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42587?language=csharp">C#</a>
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42587?language=go">Go</a>
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42587?language=java">Java</a>
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42587?language=javascript">JavaScript</a>
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42587?language=kotlin">Kotlin</a>
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42587?language=python">Python2</a>
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42587?language=python3">Python3</a>
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42587?language=ruby">Ruby</a>
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42587?language=scala">Scala</a>
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42587?language=swift">Swift</a>
+        </div>
+    </div>
+</li>
+
+</ul>
+
+<div class="challenge-content lesson-algorithm-main-section  "
+     data-challengeable-id="2539"
+     data-challengeable-type="algorithm"
+     data-algorithm-type="standard"
+     data-language="java"
+     data-user-id="200189"
+     data-interface-type="function"
+     data-challenge-web-evaluation-code="">
+    
+
+<div class="main-section">
+  <div class="guide-section" id="tour2">
+
+    <div class="guide-section-description">
+      <h6 class="guide-section-title">문제 설명</h6>
+      <div class="markdown solarized-dark"><p>일반적인 프린터는 인쇄 요청이 들어온 순서대로 인쇄합니다. 그렇기 때문에 중요한 문서가 나중에 인쇄될 수 있습니다. 이런 문제를 보완하기 위해 중요도가 높은 문서를 먼저 인쇄하는 프린터를 개발했습니다. 이 새롭게 개발한 프린터는 아래와 같은 방식으로 인쇄 작업을 수행합니다.</p>
+<div class="highlight"><pre class="codehilite"><code>1. 인쇄 대기목록의 가장 앞에 있는 문서(J)를 대기목록에서 꺼냅니다.
+2. 나머지 인쇄 대기목록에서 J보다 중요도가 높은 문서가 한 개라도 존재하면 J를 대기목록의 가장 마지막에 넣습니다.
+3. 그렇지 않으면 J를 인쇄합니다.
+</code></pre></div>
+<p>예를 들어, 4개의 문서(A, B, C, D)가 순서대로 인쇄 대기목록에 있고 중요도가 2 1 3 2 라면 C D A B 순으로 인쇄하게 됩니다.</p>
+
+<p>내가 인쇄를 요청한 문서가 몇 번째로 인쇄되는지 알고 싶습니다. 위의 예에서 C는 1번째로, A는 3번째로 인쇄됩니다.</p>
+
+<p>현재 대기목록에 있는 문서의 중요도가 순서대로 담긴 배열 priorities와 내가 인쇄를 요청한 문서가 현재 대기목록의 어떤 위치에 있는지를 알려주는 location이 매개변수로 주어질 때, 내가 인쇄를 요청한 문서가 몇 번째로 인쇄되는지 return 하도록 solution 함수를 작성해주세요.</p>
+
+<h5>제한사항</h5>
+
+<ul>
+<li>현재 대기목록에는 1개 이상 100개 이하의 문서가 있습니다.</li>
+<li>인쇄 작업의 중요도는 1~9로 표현하며 숫자가 클수록 중요하다는 뜻입니다.</li>
+<li>location은 0 이상 (현재 대기목록에 있는 작업 수 - 1) 이하의 값을 가지며 대기목록의 가장 앞에 있으면 0, 두 번째에 있으면 1로 표현합니다.</li>
+</ul>
+
+<h5>입출력 예</h5>
+<table class="table">
+        <thead><tr>
+<th>priorities</th>
+<th>location</th>
+<th>return</th>
+</tr>
+</thead>
+        <tbody><tr>
+<td>[2, 1, 3, 2]</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>[1, 1, 9, 1, 1, 1]</td>
+<td>0</td>
+<td>5</td>
+</tr>
+</tbody>
+      </table>
+<h5>입출력 예 설명</h5>
+
+<p>예제 #1</p>
+
+<p>문제에 나온 예와 같습니다.</p>
+
+<p>예제 #2</p>
+
+<p>6개의 문서(A, B, C, D, E, F)가 인쇄 대기목록에 있고 중요도가 1 1 9 1 1 1 이므로 C D E F A B 순으로 인쇄합니다. </p>
+
+<p><a href="http://www.csc.kth.se/contest/nwerc/2006/problems/nwerc06.pdf" target="_blank" rel="noopener">출처</a></p>
+</div>
+    </div>
+
+  </div>
+  <div class="run-section">
+    <div id="tour3" class="code-section" onkeyup="Hera.tryoutChallenges.resizeEditor(this);">
+      <div class="editor">
+        <ul class="nav nav-pills editor-nav-pills tap-form">
+    <input type="hidden" name="initial_code_7537" id="initial_code_7537" value="class Solution {
+    public int solution(int[] priorities, int location) {
+        int answer = 0;
+        return answer;
+    }
+}" />
+    <input id="7537"
+           data-type="code"
+           data-language="java"
+           type="hidden"
+           value="import java.util.*;
+class Solution {
+    public int solution(int[] priorities, int location) {
+        int num = priorities[location];
+        int answer = 0;
+        ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;(); 
+        
+        //sorting을 위해 list에 넣어주기
+        for(int i=0; i&lt;priorities.length; i++){
+            list.add(priorities[i]);
+        }
+        int count =0;
+        //동일한 우선순위가 자기보다 뒤에 몇개있는지 카운트
+        for(int i=priorities.length-1; i&gt;location; i--){
+            if(num == priorities[i]){
+                count ++;
+            }
+        }
+        //내림차순 정렬
+        list.sort(Comparator.reverseOrder());
+        answer = list.get(num)+ count;
+        
+        return answer;
+    }
+}"/>
+    <li class="nav-item">
+      <a href="#" class="btn-tab nav-link active"
+         data-id="7537"
+         data-language="java">
+        Solution.java </a>
+    </li>
+</ul>
+        
+          <textarea hidden id="code" name="code">import java.util.*;
+class Solution {
+    public int solution(int[] priorities, int location) {
+        int num = priorities[location];
+        int answer = 0;
+        ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;(); 
+        
+        //sorting을 위해 list에 넣어주기
+        for(int i=0; i&lt;priorities.length; i++){
+            list.add(priorities[i]);
+        }
+        int count =0;
+        //동일한 우선순위가 자기보다 뒤에 몇개있는지 카운트
+        for(int i=priorities.length-1; i&gt;location; i--){
+            if(num == priorities[i]){
+                count ++;
+            }
+        }
+        //내림차순 정렬
+        list.sort(Comparator.reverseOrder());
+        answer = list.get(num)+ count;
+        
+        return answer;
+    }
+}</textarea>
+      </div>
+    </div>
+
+    <div class="output-section" id="tour6">
+      <div class="tab-header">
+        <div id="output-title" class="output-title" data-toggle="tab">
+          <span class="connection-status disconnected"
+                data-container="body" data-toggle="popover" data-placement="top" title="서버와의 연결 끊김" data-html="true"
+                data-content="
+                  <h6>네트워크가 불안정하여 서버와의 연결이 끊어졌습니다.
+                  페이지 새로고침을 하거나 네트워크가 안정적이 되면 자동으로 재 연결됩니다.</h6>
+                  <h6 style='margin-top: 4px;'>네트워크가 정상임에도 계속해서 연결이 끊어진 상태가 지속된다면 네트워크 방화벽 문제일 수 있습니다.
+                  모바일 테더링 등 다른 네트워크를 통해 테스트에 접속해 보세요.</h6>">
+            <svg class="ic-24"><use xlink:href="/assets/svg-defs-ad3ff9b9dc449afabc94a267738c9f14fcac2e4adef022a96a4eb645cfc5a653.svg#ic-power-off"/></svg>
+          </span>
+
+          실행 결과
+            <a id="stop-button" class="btn btn-sm btn-danger" href="#">실행 중지</a>
+          <span id="output-spinner" class="spinner hidden">
+              <span class="bounce1"></span>
+              <span class="bounce2"></span>
+              <span class="bounce3"></span>
+            </span>
+        </div>
+      </div>
+      <div class="console tab-content">
+        <div id="output" class="console-output tab-pane fade in active show">
+          실행 결과가 여기에 표시됩니다.
+          <pre class='console-content'><div></div></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="button-section">
+  <div class="testcase-button">
+    <a id="btn-show-question" class="btn btn-dark" href="/learn/courses/30/lessons/42587/questions">질문하기 (33)</a>
+      <a class="btn btn-dark btn-block" data-remote="true" href="/challenge_algorithms/2539/custom_testcases?lesson_id=42587">
+        테스트 케이스 추가하기
+</a>  </div>
+
+  <div class="func-buttons">
+      <a id="view-solution-group" class="btn btn-dark btn-svg" data-remote="true" href="/learn/courses/30/lessons/42587/solution_groups?language=java">
+        <svg class="ic-24 ic-white"><use xlink:href="/assets/svg-defs-ad3ff9b9dc449afabc94a267738c9f14fcac2e4adef022a96a4eb645cfc5a653.svg#ic-lock-full"/></svg> <span>다른 사람의 풀이</span>
+</a>
+      <a id="reset-code" class="btn btn-dark" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="에디터의 코드가 초기화됩니다. 초기화 버튼을 누르기 이전 코드 복원하려면 코드 에디터에 커서를 두고 Ctrl-Z를 눌러 보세요." href="#">초기화</a>
+      <div id="tour4">
+        <button name="button" type="submit" id="run-code" class="btn btn-dark" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="기본 테스트 케이스가 정상 동작하는지 확인합니다. [테스트 케이스 추가하기]를 눌러서 수행할 테스트를 수정할 수 있습니다.">실행</button>
+      </div>
+
+      <div id="tour5">
+        <button name="button" type="submit" id="submit-code" class="btn btn-primary" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="테스트 종료 전 언제든 다시 제출할 수 있으며 제출한 코드 중 가장 높은 점수의 코드가 자동으로 최종 제출됩니다.">코드 채점하고 제출</button>
+      </div>
+  </div>
+</div>
+</div>
+  </div>
+
+</div>
+
+
+
+<div class="modal fade" id="modal-dialog" tabindex="-1" role="dialog" aria-hidden="true"></div>
+
+<script src="/assets/application-08227db0eebe11a9c618f4417d168bd6885a0d7f7a3c47f1563fe0359d358e90.js"></script>
+
+<script>
+//<![CDATA[
+  I18n.defaultLocale = "ko";
+  I18n.locale = "ko";
+  I18n.fallbacks = true;
+
+//]]>
+</script>
+<script>
+//<![CDATA[
+window.addEventListener('load', function() {});
+//]]>
+</script>
+  <script src="//widget.cloudinary.com/global/all.js" type="text/javascript">
+    cloudinary.setCloudName('eightcruz');
+  </script>
+
+  <script src="https://www.gstatic.com/charts/loader.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    Rollbar.configure({
+      payload: {
+        environment: "production",
+        client: {
+          javascript: {
+            code_version: "f164becf78b069924c4593e11c14b2510bf99106",
+            guess_uncaught_frames: true
+          }
+        },
+        person: {
+          id: 200189,
+          username: "JJByun",
+          email: "jd0909@naver.com"
+        }
+      }
+    });
+  </script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT8HLJD"
+          height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+<noscript>
+  이 사이트의 기능을 모두 활용하기 위해서는 자바스크립트를 활성화할 필요가 있습니다.
+  <a href="http://www.enable-javascript.com/ko/" target="_blank">
+    브라우저에서 자바스크립트를 활성화하는 방법</a>을 참고하세요.
+</noscript>
+</body>
+</html>
