@@ -4,88 +4,63 @@ import java.util.*;
 
 class Solution {
   public String solution(int n) {
-      
+
       List <Integer> list = new ArrayList<>();
-      
+
+      String answer = "";
       int mod;
       int count = 0;
       int div = 0;
-      
-      while(true){
-          
-          if(n < 3){
-              
-            list.add(n);
-            count++;
-            break;
-              
-          }
-          
-          else{
-          
-              mod = n%3;
-              System.out.println("mod:"+mod);
 
+      while(true){
+
+          count++;
+
+          if(n < 3){
+
+            list.add(n);
+            break;
+
+          }
+
+          else{
+              //3진수화
+              mod = n%3;
+
+              //0->4 나머지는 그대로
               if(mod == 0){
                   list.add(4);
-                  count++;
               }
               else{
                   list.add(mod);
-                  count++;
-              }    
+              }
+
+              //모드값만큼 빼준다
               div = n - mod;
 
+              //앞자리가 바뀌기 전의 마지막 수인 경우
               if(mod == 0){
-
                   div = (div/3) - 1;
-                  
-                  if(div == 0)
-                      break;
-
-                  if(div == 3){
-                      list.add(4);
-                      count++;
-                      break;
-                  }
-                  else if(div <= 2){
-                      list.add(div);
-                      count++;
-                      break;
-                  }
-                  else{
-                      n = div;
-                  }
-
               }
+              //아닌경우
               else{
-
                   div = div/3;
+              }
 
-                  if(div == 3){
-                      list.add(4);
-                      count++;
-                      break;
-                  }
-                  else if(div <= 2){
-                      list.add(div);
-                      count++;
-                      break;
-                  }
-                  else{
-                      n = div;
-                  }
-              }          
+              //줄어든 값으로 계속 반복
+              if(div == 0)
+                  break;
+              else{
+                  n = div;
+              }
+
           }
       }
-      
-      String answer = "";
-            
+
       for(int i = count-1; i >= 0; i--){
-        System.out.println("list > " + list.get(i));
         answer += Integer.toString(list.get(i));
       }
-      
+
       return answer;
   }
 }
