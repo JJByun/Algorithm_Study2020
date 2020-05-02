@@ -8,7 +8,7 @@ public class Rectangle {
         System.out.println(w);
         System.out.println(h);
         if(w==h){ //정사각형인 경우 무조건 가로 or 세로 길이만큼 못씀
-            answer = w*h -w;
+            answer =doubleW*doubleH -doubleW;
             return (long)answer;
         }else if(w==1 || h ==1){ // 둘 중 하나가 1이라면 모두 못씀
             answer=0;
