@@ -1,0 +1,29 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+public class NumberSum {
+    //solution number : 2003
+    public static void main(String args[]) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int[] input = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+        int N = input[0];
+        int M = input[1];
+        int[] numbers = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+        int sum = 0;
+        int start = 0;
+        int end = 0;
+        int count = 0;
+        while(true){
+            if(sum >= M) sum -= numbers[start++]; //부분합이 M 보다 크거나 같다면 start를 하나 올려서 부분합에서 빼주기
+            else if(end == N) break; //부분합을 만들면서 왔기 때문에, end가 n의 크기만큼 오게됐다면 더이상 수를 만들 수 없음
+            else if(sum < M) sum += numbers[end++]; //M보다 작다면 end 인덱스를 하나 올려서 부분합 더해주기
+
+            if(sum == M) count++;
+        }
+        System.out.println(count);
+    }
+
+}
+
