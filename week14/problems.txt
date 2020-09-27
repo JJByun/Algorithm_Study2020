@@ -5,3 +5,6 @@
 공유기 설치 - https://www.acmicpc.net/problem/2110
 과자 나눠주기 - https://www.acmicpc.net/problem/16401
 
+
+<어려운 문제>
+숫자구슬 - https://www.acmicpc.net/problem/2613
